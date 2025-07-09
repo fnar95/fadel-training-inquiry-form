@@ -14,7 +14,54 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      training_requests: {
+        Row: {
+          attendees: number
+          contact: string
+          created_at: string
+          date: string
+          description: string | null
+          id: string
+          location: string
+          name: string
+          notes: string | null
+          program_name: string
+          target_audience: string
+          time: string
+          updated_at: string
+        }
+        Insert: {
+          attendees: number
+          contact: string
+          created_at?: string
+          date: string
+          description?: string | null
+          id?: string
+          location: string
+          name: string
+          notes?: string | null
+          program_name: string
+          target_audience: string
+          time: string
+          updated_at?: string
+        }
+        Update: {
+          attendees?: number
+          contact?: string
+          created_at?: string
+          date?: string
+          description?: string | null
+          id?: string
+          location?: string
+          name?: string
+          notes?: string | null
+          program_name?: string
+          target_audience?: string
+          time?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
