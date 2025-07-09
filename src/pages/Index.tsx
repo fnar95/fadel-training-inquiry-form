@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, Users, Target, Phone } from "lucide-react";
+import { BookOpen, Users, Target, Phone, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -17,12 +17,21 @@ const Index = () => {
           </p>
           <div className="w-32 h-1 bg-primary mx-auto rounded-full mb-12"></div>
           
-          <Link to="/training-request">
-            <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90">
-              <BookOpen className="w-5 h-5 ml-2" />
-              اطلب برنامجك التدريبي الآن
-            </Button>
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/training-request">
+              <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90">
+                <BookOpen className="w-5 h-5 ml-2" />
+                اطلب برنامجك التدريبي الآن
+              </Button>
+            </Link>
+            
+            <Link to="/view-requests">
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6">
+                <Eye className="w-5 h-5 ml-2" />
+                عرض الطلبات المرسلة
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
