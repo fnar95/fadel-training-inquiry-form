@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, Users, Target, Phone, Eye } from "lucide-react";
+import { BookOpen, Users, Target, Mail, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -106,9 +106,11 @@ const Index = () => {
               </Button>
             </Link>
             
-            <Button variant="outline" size="lg" className="w-full sm:w-auto">
-              <Phone className="w-5 h-5 ml-2" />
-              تواصل معنا
+            <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
+              <a href="https://fnar-blog-archive.lovable.app/#contact" target="_blank" rel="noopener noreferrer">
+                <Mail className="w-5 h-5 ml-2" />
+                تواصل معنا
+              </a>
             </Button>
           </div>
         </div>
