@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, Users, Target, Mail, Eye } from "lucide-react";
+import { BookOpen, Users, Target, Mail, Eye, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -99,12 +99,12 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/training-request">
-              <Button size="lg" className="w-full sm:w-auto">
-                <BookOpen className="w-5 h-5 ml-2" />
-                اطلب استشارة مجانية
-              </Button>
-            </Link>
+            <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
+              <a href="https://x.com/Fnar9595" target="_blank" rel="noopener noreferrer">
+                <Twitter className="w-5 h-5 ml-2" />
+                تابعني على تويتر
+              </a>
+            </Button>
             
             <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
               <a href="https://fnar-blog-archive.lovable.app/#contact" target="_blank" rel="noopener noreferrer">
