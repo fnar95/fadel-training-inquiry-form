@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { ArrowLeft, Calendar, Clock, Users, MapPin, Phone, FileText } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Users, MapPin, Phone, FileText, Lock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "@/hooks/use-toast";
 
@@ -25,10 +26,29 @@ interface TrainingRequest {
 const ViewRequests = () => {
   const [requests, setRequests] = useState<TrainingRequest[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState("");
+  const [showPasswordError, setShowPasswordError] = useState(false);
+
+  // كلمة المرور الصحيحة - يمكنك تغييرها
+  const ADMIN_PASSWORD = "admin123";
 
   useEffect(() => {
-    fetchRequests();
-  }, []);
+    if (isAuthenticated) {
+      fetchRequests();
+    }
+  }, [isAuthenticated]);
+
+  const handlePasswordSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (password === ADMIN_PASSWORD) {
+      setIsAuthenticated(true);
+      setShowPasswordError(false);
+    } else {
+      setShowPasswordError(true);
+      setPassword("");
+    }
+  };
 
   const fetchRequests = async () => {
     try {
@@ -79,6 +99,61 @@ const ViewRequests = () => {
     );
   }
 
+  // إذا لم يتم تسجيل الدخول، عرض شاشة كلمة المرور
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-muted/20 flex items-center justify-center py-8 px-4">
+        <div className="max-w-md w-full">
+          <Card className="shadow-xl border-0 bg-background/80 backdrop-blur-sm">
+            <CardHeader className="text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Lock className="w-8 h-8 text-primary" />
+              </div>
+              <CardTitle className="text-2xl text-foreground">
+                منطقة المدير
+              </CardTitle>
+              <p className="text-muted-foreground">
+                يرجى إدخال كلمة المرور للوصول إلى الطلبات
+              </p>
+            </CardHeader>
+            
+            <CardContent>
+              <form onSubmit={handlePasswordSubmit} className="space-y-4">
+                <div>
+                  <Input
+                    type="password"
+                    placeholder="كلمة المرور"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="text-right"
+                    required
+                  />
+                  {showPasswordError && (
+                    <p className="text-destructive text-sm mt-2 text-right">
+                      كلمة المرور غير صحيحة
+                    </p>
+                  )}
+                </div>
+                
+                <div className="flex gap-3">
+                  <Button type="submit" className="flex-1">
+                    دخول
+                  </Button>
+                  <Link to="/" className="flex-1">
+                    <Button variant="outline" className="w-full">
+                      <ArrowLeft className="w-4 h-4 ml-2" />
+                      إلغاء
+                    </Button>
+                  </Link>
+                </div>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-muted/20 py-8 px-4">
       <div className="max-w-7xl mx-auto">
@@ -92,12 +167,22 @@ const ViewRequests = () => {
               عرض جميع الطلبات المرسلة
             </p>
           </div>
-          <Link to="/">
-            <Button variant="outline" size="lg">
-              <ArrowLeft className="w-4 h-4 ml-2" />
-              العودة للرئيسية
+          <div className="flex gap-2">
+            <Button 
+              variant="outline" 
+              size="lg"
+              onClick={() => setIsAuthenticated(false)}
+            >
+              <Lock className="w-4 h-4 ml-2" />
+              تسجيل الخروج
             </Button>
-          </Link>
+            <Link to="/">
+              <Button variant="outline" size="lg">
+                <ArrowLeft className="w-4 h-4 ml-2" />
+                العودة للرئيسية
+              </Button>
+            </Link>
+          </div>
         </div>
 
         {requests.length === 0 ? (
