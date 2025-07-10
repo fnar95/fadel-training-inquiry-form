@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, Users, Target, Mail, Eye, Twitter } from "lucide-react";
@@ -48,11 +49,11 @@ const Index = () => {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Users className="w-8 h-8 text-primary" />
                 </div>
-                <CardTitle className="text-xl">القيادة والإدارة</CardTitle>
+                <CardTitle className="text-xl">استراتيجيات التدريس</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base">
-                  برامج متخصصة في تطوير مهارات القيادة والإدارة الفعالة للمديرين والمشرفين
+                  برامج متخصصة في استراتيجيات التدريس الحديث والتعلم النشط بما يتناسب مع مهارات القرن21
                 </CardDescription>
               </CardContent>
             </Card>
