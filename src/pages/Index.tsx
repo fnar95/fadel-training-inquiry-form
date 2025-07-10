@@ -81,7 +81,7 @@ const Index = () => {
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base">
-                  برامج تدريبية مصممة خصيصاً لتلبية احتياجات مؤسستكم وأهدافكم المحددة
+                  برامج تدريبية تقنية لكل مايتعلق بالمنصات التعليمية والذكاء الاصطناعي وأدوات أوفس365
                 </CardDescription>
               </CardContent>
             </Card>
