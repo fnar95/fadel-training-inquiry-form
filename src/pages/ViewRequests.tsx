@@ -25,7 +25,7 @@ interface TrainingRequest {
 
 const ViewRequests = () => {
   const [requests, setRequests] = useState<TrainingRequest[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
   const [showPasswordError, setShowPasswordError] = useState(false);
@@ -51,6 +51,7 @@ const ViewRequests = () => {
   };
 
   const fetchRequests = async () => {
+    setLoading(true);
     try {
       const { data, error } = await supabase
         .from("training_requests")
