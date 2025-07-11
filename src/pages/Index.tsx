@@ -45,7 +45,8 @@ const Index = () => {
                 <img 
                   src="/lovable-uploads/e9816855-cfa2-4c49-8523-7d8622fcbd1f.png" 
                   alt="المدرب فاضل المبارك"
-                  className="w-48 h-48 rounded-full object-cover shadow-2xl mx-auto border-4 border-background"
+                  className="w-40 h-40 rounded-full object-cover shadow-2xl mx-auto border-4 border-background"
+                  style={{ width: '160px', height: '160px' }}
                 />
                 <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 to-transparent"></div>
               </div>
