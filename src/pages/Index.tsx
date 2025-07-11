@@ -36,6 +36,43 @@ const Index = () => {
         </div>
       </section>
 
+      {/* About the Trainer Section */}
+      <section className="py-16 px-4 bg-muted/20">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="lg:w-1/3">
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/e9816855-cfa2-4c49-8523-7d8622fcbd1f.png" 
+                  alt="المدرب فاضل المبارك"
+                  className="w-80 h-80 rounded-full object-cover shadow-2xl mx-auto border-4 border-background"
+                />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 to-transparent"></div>
+              </div>
+            </div>
+            
+            <div className="lg:w-2/3 text-center lg:text-right">
+              <h2 className="text-3xl font-bold text-foreground mb-6">
+                عن المدرب
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                مدرب متخصص في أدوات الذكاء الاصطناعي وبرامج أوفس365 والمنصات التعليمية الحديثة. 
+                أسعى لتقديم تدريب عالي الجودة يواكب أحدث التطورات التقنية في مجال التعليم والتدريب.
+              </p>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                خبرة واسعة في استراتيجيات التدريس الحديثة والتعلم النشط، مع التركيز على دمج التقنية 
+                في العملية التعليمية لتحقيق أفضل النتائج للمتدربين.
+              </p>
+              <Link to="/training-request">
+                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                  احجز تدريبك الآن
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
