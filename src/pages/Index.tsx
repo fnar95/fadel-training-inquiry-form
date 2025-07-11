@@ -7,6 +7,19 @@ import { Link } from "react-router-dom";
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-muted/20">
+      {/* Header with Logo */}
+      <header className="py-4 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex justify-center">
+            <img 
+              src="/lovable-uploads/eda11f6b-4189-49bf-b91b-f76814f9c3c9.png" 
+              alt="أستاذ فاضل - لوقو"
+              className="h-20 w-auto"
+            />
+          </div>
+        </div>
+      </header>
+
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
