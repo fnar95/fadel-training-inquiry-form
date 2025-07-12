@@ -69,8 +69,8 @@ const Index = () => {
                 <img 
                   src="/lovable-uploads/64705b91-73ae-4cd3-b411-1ffbfdd31c16.png" 
                   alt="المدرب فاضل المبارك"
-                  className="relative w-48 h-48 rounded-full object-cover shadow-2xl mx-auto border-4 border-white"
-                  style={{ width: '192px', height: '192px' }}
+                  className="relative w-32 h-32 rounded-full object-cover shadow-2xl mx-auto border-4 border-white"
+                  style={{ width: '128px', height: '128px' }}
                 />
               </div>
             </div>
