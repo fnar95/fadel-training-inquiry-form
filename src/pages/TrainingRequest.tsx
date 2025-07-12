@@ -375,7 +375,7 @@ const TrainingRequest = () => {
         {/* Footer */}
         <div className="text-center mt-8">
           <p className="text-muted-foreground">
-            سيتم مراجعة طلبك والتواصل معك خلال 24 ساعة
+            جميع الحقوق محفوظة للمدرب فاضل المبارك
           </p>
         </div>
       </div>
