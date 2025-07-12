@@ -68,6 +68,16 @@ const TrainingRequest = () => {
         throw error;
       }
 
+      // Send notification email
+      try {
+        await supabase.functions.invoke("send-notification", {
+          body: data,
+        });
+      } catch (emailError) {
+        console.error("Error sending notification email:", emailError);
+        // Don't fail the whole operation if email fails
+      }
+
       toast({
         title: "تم إرسال الطلب بنجاح!",
         description: "سيتم التواصل معك قريباً لتأكيد التفاصيل.",
