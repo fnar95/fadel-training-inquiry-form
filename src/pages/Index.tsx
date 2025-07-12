@@ -67,7 +67,7 @@ const Index = () => {
               <div className="relative group">
                 <div className="absolute -inset-1 primary-gradient rounded-full blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
                 <img 
-                  src="/lovable-uploads/e9816855-cfa2-4c49-8523-7d8622fcbd1f.png" 
+                  src="/lovable-uploads/64705b91-73ae-4cd3-b411-1ffbfdd31c16.png" 
                   alt="المدرب فاضل المبارك"
                   className="relative w-48 h-48 rounded-full object-cover shadow-2xl mx-auto border-4 border-white"
                   style={{ width: '192px', height: '192px' }}
