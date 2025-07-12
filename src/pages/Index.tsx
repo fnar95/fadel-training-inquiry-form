@@ -182,7 +182,7 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button variant="outline" size="lg" className="w-full sm:w-auto btn-primary-enhanced border-2 border-primary" asChild>
+            <Button size="lg" className="w-full sm:w-auto btn-primary-enhanced" asChild>
               <a href="https://x.com/Fnar9595" target="_blank" rel="noopener noreferrer">
                 <Twitter className="w-6 h-6 ml-2" />
                 تابعني على تويتر
